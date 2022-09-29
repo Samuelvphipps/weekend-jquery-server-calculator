@@ -6,7 +6,7 @@
         []Include Mathematical operations: +, -, /, *
     []submit button === '='
     []clear button 'c'
-[]Send user inputs to server via POST as an object, server runs the requested mathematical operation and updates state
+[]Send user inputs to server via POST as an object, server runs the requested mathematical operation and updates state  post(/mathInfo)
     ex: {num1: 1,
         num2: 2,   
         operator: *
