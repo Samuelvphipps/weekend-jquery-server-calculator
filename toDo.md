@@ -1,4 +1,9 @@
 
+RULES:
+
+    -NO .EVAL()
+    -
+
 []Userinterface
     []three input fields for user
         []num1
