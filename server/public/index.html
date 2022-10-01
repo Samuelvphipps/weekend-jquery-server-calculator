@@ -7,32 +7,41 @@
     <title>Server Calculator</title>
     <script src="jquery.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Calculator</h1>
+    <header class="container">
+        <div id="header">
+            <h1>Calculator</h1>
+        </div>
     </header>
-    <div id="calculator-inputs">
-        <form>
-            <input type="number" id="num1" placeholder="NUMBER" require>
-            <button data-operator="+" type="button" class="operator" id="add">+</button>
-            <button data-operator="-" type="button" class="operator" id="subract">-</button>
-            <button data-operator="*" type="button" class="operator" id="multipy">*</button>
-            <button data-operator="/" type="button" class="operator" id="divide">/</button>
-            <input type="number" id="num2"  placeholder="NUMBER" require>
-            <button type="submit" id="equals">=</button>
-            <button id="clear" type="button">C</button>
+    </header>
+    <div id="calculator-inputs" class="d-md-grid mx-auto">
+        <form class="mb-3">
+            <input type="number" class="form-outline" id="num1" placeholder="NUMBER ONE" require>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="btn btn-secondary operator" data-operator="+" type="button" id="add">+</button>
+                <button class="btn btn-secondary operator" data-operator="-" type="button" id="subract">-</button>
+                <button class="btn btn-secondary operator" data-operator="*" type="button" id="multipy">*</button>
+                <button class="btn btn-secondary operator" data-operator="/" type="button" id="divide">/</button>
+            </div>
+            <input class="form-outline" type="number" id="num2"  placeholder="NUMBER TWO" require>
+            <button class="btn btn-primary" type="submit" id="equals">=</button>
+            <button class="btn btn-dark" id="clear" type="button">C</button>
         </form>        
     </div>
-
-    <section id="result">
+    <div id="output-section">
+    <div id="results">
+        <section id="result">
             
-    </section>
-
-    <ul id="historic-calculations">
-        <li> Result here</li>
-    </ul>
-
+        </section>
+    </div>
+    <div id="list" class="d-flex">
+        <ul id="historic-calculations" class="list-group d-md-grid mx-auto">
+        
+        </ul>
+    </div>
+    </div>
 </body>
 </html>

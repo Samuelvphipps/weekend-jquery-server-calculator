@@ -1,0 +1,64 @@
+body{
+    background-image: url(https://i.pinimg.com/originals/c0/93/25/c0932547bfcb7293823b91754e824e66.jpg);
+}
+
+input{
+    background-color:#6c757d;
+    height: 2.38em;
+    margin: auto auto;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin:auto .5em auto .5em;
+    color:white;
+}
+
+#header{
+    border: 2px solid black;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em auto;
+    background-color: white;
+}
+
+#results{
+    margin:auto;
+    text-align: center;
+}
+#equals, #clear{
+    margin: 1em .2em
+}
+
+form{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1em;
+    margin:auto;
+    background-color: white;
+}
+.btn{
+    border: 1px solid black;
+}
+
+#list{
+    margin:auto;
+}
+
+li{
+    text-align: center;
+}
+
+#output-section{
+    border: 2px solid black;
+    margin: auto;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: white;
+}
+
+::placeholder{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: small;
+}
