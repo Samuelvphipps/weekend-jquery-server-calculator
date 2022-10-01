@@ -22,6 +22,9 @@ I started using bootstrap at Edan's recommendation and I am still figuring it an
 
 Link to software that is required to install the app (e.g. node).
 
+To start Server use terminal: npm start
+    ->runs port 3000
+
 - [Node.js](https://nodejs.org/en/)
 - bootstrap/css included
 
