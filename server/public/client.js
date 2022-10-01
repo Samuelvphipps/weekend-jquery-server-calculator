@@ -3,6 +3,8 @@ $(document).ready(onReady);
 
 //STATE
 let calculationState=[];
+
+//starts with empty operator so user can be alerted if no operator is chosen
 let calculationsLocal={
     operator: '',
 };
@@ -35,6 +37,7 @@ function onSubmit(evt){
     // update calculationsLocal
     calculationsLocal.num1=$('#num1').val();
     calculationsLocal.num2=$('#num2').val();
+    //alert if no operator chosen
     if(calculationsLocal.operator===''){
         alert('must choose operator');
         return;
@@ -60,8 +63,10 @@ function onSubmit(evt){
 //onClear
 function onClearCalculator(evt){
     evt.preventDefault();
+    //empty input fields
     $('#num1').val('');
     $('#num2').val('');
+    //empty operator choice so that alert runs on next calculation
     calculationsLocal.operator='';
     console.log('in onClearCalculator')
 }
@@ -96,6 +101,7 @@ function render(){
     }   
         //undefined, convert to number
     $('#result').empty();
+    //if empty array start with result: empty
     if(calculationState.length!=0){
         $('#result').append(`
             <h2> RESULT: ${calculationState[0].result}</h2>
