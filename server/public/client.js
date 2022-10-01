@@ -91,7 +91,7 @@ function render(){
     //for loop to append to DOM
     for(let results of calculationState){
         $('#historic-calculations').append(`
-        <li>${results.num1} ${results.operator} ${results.num2} = ${results.result} </li> 
+        <li class="list-group-item list-group-item-action w-auto">${results.num1} ${results.operator} ${results.num2} = ${results.result} </li> 
         `);
     }   
         //undefined, convert to number
