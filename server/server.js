@@ -22,7 +22,7 @@ app.post('/mathInfo', (req, res) => {
     req.body.result=results;
     calculationState.unshift(req.body);
     console.log(calculationState);
-    res.sendStatus('201');
+    res.sendStatus('200');
 });
 
 app.get('/mathInfo', (req,res) => {

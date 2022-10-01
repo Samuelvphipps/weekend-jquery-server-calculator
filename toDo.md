@@ -27,7 +27,7 @@ RULES:
 
 
 -STRETCH-
-[]STYLE the page
+[X]STYLE the page
 
 [] Style to look like a calculator
 
