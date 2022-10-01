@@ -22,7 +22,7 @@ RULES:
 [X] Keep a history of all math operations and solutions on server - STATE render
     [X] Display history of calculations on DOM state render
 
-[]Have clear button clear calculator
+[X]Have clear button clear calculator
 
 -STRETCH-
 
