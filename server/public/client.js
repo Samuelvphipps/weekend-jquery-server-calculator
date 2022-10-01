@@ -3,18 +3,19 @@ $(document).ready(onReady);
 
 //STATE
 let calculationState=[];
-
 //starts with empty operator so user can be alerted if no operator is chosen
 let calculationsLocal={
+    numInputs: '',
     operator: '',
 };
-let operator='';
+let displayNumber=''
 
 function onReady(){
     console.log('in JQ and JS');
     getState();
     //click listener for operator (*, /, +, -);
     $('.operator').on('click', onOperatorChoice);
+    $('.number').on('click', onAddNumber)
     //click listener for submit
     $('#calculator-inputs').on('submit', onSubmit);
     //click listener for clear
@@ -23,12 +24,37 @@ function onReady(){
 //on operator choice
 function onOperatorChoice(evt){
     evt.preventDefault();
+    let chosenOperator=$(this).data('operator')
     console.log('in onOperatorChoice');
+
     //assign chosen operater to object property 'operator'
-    calculationsLocal.operator= $(this).data('operator');
-    console.log(calculationsLocal);
+    calculationsLocal.operator = chosenOperator;
+
+    //assign a - to chosen numbers for future split
+    calculationsLocal.numInputs += '-';
+
+    //change display number so display adds new value
+    displayNumber+=chosenOperator;
+    $('#display').val(`${displayNumber}`);
+    // console.log(calculationsLocal);
 }
 
+function onAddNumber(evt){
+    evt.preventDefault();
+    //id chosen number
+    let chosenNumber=$(this).data('number');
+    //assign numberto chosen numbers for future split
+   
+    let stringNumber=chosenNumber.toString();
+    calculationsLocal.numInputs += chosenNumber;
+    //change display number
+    displayNumber+=stringNumber;
+    console.log('displayNumber', stringNumber);
+    $('#display').val(`${displayNumber}`);
+    
+    console.log('chosenNumber', chosenNumber);
+
+}
 // onSubmit
 function onSubmit(evt){
     evt.preventDefault();
@@ -44,6 +70,7 @@ function onSubmit(evt){
     };
 
     //POST to server
+
     $.ajax({
         url: '/mathInfo',
         method: 'POST',
@@ -55,6 +82,7 @@ function onSubmit(evt){
         .catch(err=>{
             console.log('in /mathInfo POST error', err);
         });
+        
     //getState/render
 
 }
