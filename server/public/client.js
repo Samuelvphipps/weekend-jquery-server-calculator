@@ -98,8 +98,13 @@ function render(){
     $('#result').empty();
     if(calculationState.length!=0){
         $('#result').append(`
-            <h2> RESULT: ${calculationState[0].result};
+            <h2> RESULT: ${calculationState[0].result}</h2>
         `);}
+        else{
+            $('#result').append(`
+            <h2> RESULT:</h2>
+        `);
+        }
 };
 
 
