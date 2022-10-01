@@ -24,7 +24,10 @@ RULES:
 
 [X]Have clear button clear calculator
 
+
+
 -STRETCH-
+[]STYLE the page
 
 [] Style to look like a calculator
 
