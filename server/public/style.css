@@ -11,10 +11,13 @@ body{
     border:2px solid black;
     border-radius: 10px;
     display:block;
-    margin: 1em;
+    width: 300px;
+    margin: 1em auto;
 }
 
-
+#row{
+    width: 200px;
+}
 input{
     background-color:#6c757d;
     height: 2.38em;
@@ -80,5 +83,5 @@ li{
     margin:1em auto
 }
 button{
-    margin: .25em;
+    margin: .1em;
 }
