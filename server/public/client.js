@@ -21,14 +21,33 @@ function onOperatorChoice(evt){
     evt.preventDefault();
     console.log('in onOperatorChoice');
     //assign chosen operater to object property 'operator'
-    calculations.operator= $(this).data('operator');
-    console.log(calculations)
+    calculationsLocal.operator= $(this).data('operator');
+    console.log(calculationsLocal);
 }
 
 // onSubmit
 function onSubmit(evt){
     evt.preventDefault();
     console.log('in onSubmit');
+
+    // update calculationsLocal
+    calculationsLocal.num1=$('#num1').val();
+    calculationsLocal.num2=$('#num2').val();
+
+    //POST to server
+    $.ajax({
+        url: '/mathInfo',
+        method: 'POST',
+        data: calculationsLocal
+    })
+        .then((response) => {
+            if(response){getState()};
+        })
+        .catch(err=>{
+            console.log('in /mathInfo POST error', err);
+        });
+    //getState/render
+
 }
 
 
@@ -37,7 +56,7 @@ function onClearCalculator(evt){
     evt.preventDefault();
     console.log('in onClearCalculator')
 }
-
+//get state with render inside
 function getState(){
     console.log('in getState');
     
@@ -55,23 +74,24 @@ function getState(){
             console.log('in /mathInfo get error', err);
         })
 
-}
-
+};
+//render after GET state
 function render(){
     console.log('in Render');
     $('#historic-calculations').empty();
     //for loop to append to DOM
-    for(let result of calculationState){
+    for(let results of calculationState){
         $('#historic-calculations').append(`
-        <li>${result.num1} ${result.operator} ${result.num2} = ${result.result} </li> 
+        <li>${results.num1} ${results.operator} ${results.num2} = ${results.result} </li> 
         `);
     }   
         //undefined, convert to number
-    // $('#result').empty();
-    // $('#result').append(`
-    //     <h2>${calculationState[calculationState.length -1]}.result
-    // `);
-}
+    $('#result').empty();
+    
+    $('#result').append(`
+        <h2> RESULT: ${calculationState[0].result}
+    `);
+};
 
 
 //stretch
