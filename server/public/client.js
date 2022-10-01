@@ -3,7 +3,9 @@ $(document).ready(onReady);
 
 //STATE
 let calculationState=[];
-let calculationsLocal={};
+let calculationsLocal={
+    operator: '',
+};
 let operator='';
 
 function onReady(){
@@ -33,6 +35,10 @@ function onSubmit(evt){
     // update calculationsLocal
     calculationsLocal.num1=$('#num1').val();
     calculationsLocal.num2=$('#num2').val();
+    if(calculationsLocal.operator===''){
+        alert('must choose operator');
+        return;
+    };
 
     //POST to server
     $.ajax({
@@ -56,6 +62,7 @@ function onClearCalculator(evt){
     evt.preventDefault();
     $('#num1').val('');
     $('#num2').val('');
+    calculationsLocal.operator='';
     console.log('in onClearCalculator')
 }
 //get state with render inside
