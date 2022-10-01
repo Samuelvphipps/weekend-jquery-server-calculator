@@ -36,6 +36,7 @@ function onOperatorChoice(evt){
     //change display number so display adds new value
     displayNumber+=chosenOperator;
     $('#display').val(`${displayNumber}`);
+    $('.operator').prop('disabled', true);
     // console.log(calculationsLocal);
 }
 
@@ -64,6 +65,8 @@ function onSubmit(evt){
     // calculationsLocal.num1=$('#num1').val();
     // calculationsLocal.num2=$('#num2').val();
     //alert if no operator chosen
+        // ⏫ from base mode code
+
     if(calculationsLocal.operator===''){
         alert('must choose operator');
         return;
@@ -89,9 +92,11 @@ function onSubmit(evt){
 //onClear
 function onClearCalculator(evt){
     evt.preventDefault();
+    $('.operator').attr('disabled', false);
     //empty input fields
     // $('#num1').val('');
     // $('#num2').val('');
+        // ⏫ from original base mode code
     $('#display').val('');
     //empty operator choice so that alert runs on next calculation
     calculationsLocal.operator='';
@@ -99,7 +104,9 @@ function onClearCalculator(evt){
     calculationsLocal.numInputs='';
     //empty display number
     displayNumber='';
-    console.log('in onClearCalculator')
+    //enable operator buttons
+   
+    console.log('in onClearCalculator');
 }
 //get state with render inside
 function getState(){
