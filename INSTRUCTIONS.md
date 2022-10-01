@@ -8,26 +8,26 @@ You are going to be building a server-side calculator. The logic for the calcula
 
 ### Calculator
 
-[X]Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation. 
+[S][X]Create a user interface where the user can input two values (2 input elements) and the select type of mathematical operation. 
 
-[X]When the submit (`=` button) is clicked, capture this input, bundle it up in an object, and send this object to the server via a POST. 
+[S][X]When the submit (`=` button) is clicked, capture this input, bundle it up in an object, and send this object to the server via a POST. 
 
-[X]There should also be a 'C' button that will clear the user input fields.
+[S][X]There should also be a 'C' button that will clear the user input fields.
 
-[X]Build out the server-side logic to compute the numbers as appropriate. 
+[S][X]Build out the server-side logic to compute the numbers as appropriate. 
 The server should be able to handle Addition, Subtraction, Multiplication, and Division. 
 
-[X]Once the calculation is complete, send back the OK. 
+[S][X]Once the calculation is complete, send back the OK. 
 
-[X]You should do a GET request after the POST to get the actual calculation.
+[S][X]You should do a GET request after the POST to get the actual calculation.
 
 ### History
 
-[X]Keep a historical record of all math operations and solutions on the server. 
+[S][X]Keep a historical record of all math operations and solutions on the server. 
 
-[X]Display a list of all previous calculations on the page when it loads using a GET request. Update the list when a new calculation is made.
+[S][X]Display a list of all previous calculations on the page when it loads using a GET request. Update the list when a new calculation is made.
 
->[X] NOTE: History should exist even after refreshing the page. It's expected that the history will go away after restarting the server. We'll talk about long term data storage next week.
+>[S][X] NOTE: History should exist even after refreshing the page. It's expected that the history will go away after restarting the server. We'll talk about long term data storage next week.
 
 ---
 ![base mode interface](images/baseMode.png)
@@ -37,7 +37,7 @@ The server should be able to handle Addition, Subtraction, Multiplication, and D
   XXXXXXXXXXX
 ## Stretch Goals
 
-- Convert the interface to look and behave like a calculator as shown below.
+[S]Convert the interface to look and behave like a calculator as shown below.
 
   *Interfaces that mirror real world objects are often more intuitive and self-explanatory for users.*
 
@@ -45,11 +45,11 @@ The server should be able to handle Addition, Subtraction, Multiplication, and D
 ![calculator interface](images/stretchGoal_interface.gif)
 ---
 
-- Only allow the POST call to happen if all necessary input is ready.
+[X]Only allow the POST call to happen if all necessary input is ready.
 
   *Data integrity is superfluously important! Sometimes users hit tje "go button" without fully inputting the needed fields. Show an alert if they left something empty and don't send bad or incomplete data to the server.*
 
-- Allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request!
+-Allow a user to clear the history by clicking on a button. Technically this shouldn't be a GET or a POST. Look into making a DELETE request!
 
   *GETs are used to, well, get information from the server. POSTs are used to send new info to the server. DELETEs are used for, you guessed it, deleting info already on the server.*
 
