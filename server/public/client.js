@@ -12,9 +12,9 @@ function onReady(){
     //click listener for operator (*, /, +, -);
     $('.operator').on('click', onOperatorChoice);
     //click listener for submit
-    $('#calculator-inputs').on('submit', onSubmit)
+    $('#calculator-inputs').on('submit', onSubmit);
     //click listener for clear
-    $('#clear').on('click', onClearCalculator)
+    $('#clear').on('click', onClearCalculator);
 }
 //on operator choice
 function onOperatorChoice(evt){
@@ -54,6 +54,8 @@ function onSubmit(evt){
 //onClear
 function onClearCalculator(evt){
     evt.preventDefault();
+    $('#num1').val('');
+    $('#num2').val('');
     console.log('in onClearCalculator')
 }
 //get state with render inside
@@ -87,10 +89,10 @@ function render(){
     }   
         //undefined, convert to number
     $('#result').empty();
-    
-    $('#result').append(`
-        <h2> RESULT: ${calculationState[0].result}
-    `);
+    if(calculationState.length!=0){
+        $('#result').append(`
+            <h2> RESULT: ${calculationState[0].result};
+        `);}
 };
 
 
