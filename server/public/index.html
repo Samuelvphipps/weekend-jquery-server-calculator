@@ -18,8 +18,10 @@
     </header>
     </header>
     <div id="calculator-inputs" class="d-md-grid mx-auto">
-        <input id="display" disabled>
-        <button data-clear="c" class="clear"></button>
+        <div>
+            <input id="display" disabled>
+            <button data-clear="c" id="clear">C</button>
+        </div>
         <div>
             <button class="number" data-number="7">7</button>
             <button class="number" data-number="8">8</button>
@@ -41,7 +43,7 @@
         <div>
             <button class="number" data-number="0">0</button>
             <button class="number" data-number=".">.</button>
-            <button class="equals" type="submit" data-number="=">=</button>
+            <button id="equals" type="submit" data-number="=">=</button>
             <button class="operator" data-operator="/">/</button>
         </div>
 

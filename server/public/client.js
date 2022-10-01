@@ -17,7 +17,7 @@ function onReady(){
     $('.operator').on('click', onOperatorChoice);
     $('.number').on('click', onAddNumber)
     //click listener for submit
-    $('#calculator-inputs').on('submit', onSubmit);
+    $('#equals').on('click', onSubmit);
     //click listener for clear
     $('#clear').on('click', onClearCalculator);
 }
@@ -25,7 +25,7 @@ function onReady(){
 function onOperatorChoice(evt){
     evt.preventDefault();
     let chosenOperator=$(this).data('operator')
-    console.log('in onOperatorChoice');
+    // console.log('in onOperatorChoice');
 
     //assign chosen operater to object property 'operator'
     calculationsLocal.operator = chosenOperator;
@@ -49,10 +49,10 @@ function onAddNumber(evt){
     calculationsLocal.numInputs += chosenNumber;
     //change display number
     displayNumber+=stringNumber;
-    console.log('displayNumber', stringNumber);
+    // console.log('displayNumber', stringNumber);
     $('#display').val(`${displayNumber}`);
     
-    console.log('chosenNumber', chosenNumber);
+    // console.log('chosenNumber', chosenNumber);
 
 }
 // onSubmit
@@ -61,16 +61,14 @@ function onSubmit(evt){
     console.log('in onSubmit');
 
     // update calculationsLocal
-    calculationsLocal.num1=$('#num1').val();
-    calculationsLocal.num2=$('#num2').val();
+    // calculationsLocal.num1=$('#num1').val();
+    // calculationsLocal.num2=$('#num2').val();
     //alert if no operator chosen
     if(calculationsLocal.operator===''){
         alert('must choose operator');
         return;
     };
-
     //POST to server
-
     $.ajax({
         url: '/mathInfo',
         method: 'POST',
@@ -92,10 +90,15 @@ function onSubmit(evt){
 function onClearCalculator(evt){
     evt.preventDefault();
     //empty input fields
-    $('#num1').val('');
-    $('#num2').val('');
+    // $('#num1').val('');
+    // $('#num2').val('');
+    $('#display').val('');
     //empty operator choice so that alert runs on next calculation
     calculationsLocal.operator='';
+    //empty local string info
+    calculationsLocal.numInputs='';
+    //empty display number
+    displayNumber='';
     console.log('in onClearCalculator')
 }
 //get state with render inside
