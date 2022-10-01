@@ -2,9 +2,7 @@ body{
     background-image: url(https://i.pinimg.com/originals/c0/93/25/c0932547bfcb7293823b91754e824e66.jpg);
 }
 
-div{
-    margin-left: 2em;
-}
+
 
 #calculator-inputs{
     background-color: white;
@@ -12,7 +10,10 @@ div{
     padding: 1em;
     border:2px solid black;
     border-radius: 10px;
+    display:block;
+    margin: 1em;
 }
+
 
 input{
     background-color:#6c757d;
@@ -79,5 +80,5 @@ li{
     margin:1em auto
 }
 button{
-    margin: 3px;
+    margin: .25em;
 }
